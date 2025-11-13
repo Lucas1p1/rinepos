@@ -54,7 +54,7 @@ export default function CareersPage() {
       <Navigation />
       <main className="bg-[hsl(var(--background))]">
         {/* Hero Section */}
-        <section className="py-20 md:py-32">
+        <section className="py-10 md:py-12">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Join the RinePOS Team</h1>
             <p className="text-xl text-[hsl(var(--muted-foreground))] mb-8 max-w-2xl mx-auto">

@@ -1,14 +1,16 @@
+import { ShoppingCart, Shirt, Laptop, Gift, Wrench, LifeBuoy, Book, Cloud } from "lucide-react";
+
 export function RetailFeatures() {
   const categoryFeatures = [
-    { icon: "🛒", label: "Supermarket" },
-    { icon: "👕", label: "Clothing Store" },
-    { icon: "💻", label: "Electronic Store" },
-    { icon: "🎁", label: "Gift & Toy" },
-    { icon: "🔧", label: "Hardware Store" },
-    { icon: "💅", label: "Beauty Salon" },
-    { icon: "📚", label: "Book Shop" },
-    { icon: "🧺", label: "Laundry" },
-  ]
+    { icon: <ShoppingCart className="w-8 h-8" />, label: "Supermarket" },
+    { icon: <Shirt className="w-8 h-8" />, label: "Clothing Store" },
+    { icon: <Laptop className="w-8 h-8" />, label: "Electronic Store" },
+    { icon: <Gift className="w-8 h-8" />, label: "Gift & Toy" },
+    { icon: <Wrench className="w-8 h-8" />, label: "Hardware Store" },
+    { icon: <LifeBuoy className="w-8 h-8" />, label: "Beauty Salon" },
+    { icon: <Book className="w-8 h-8" />, label: "Book Shop" },
+    { icon: <Cloud className="w-8 h-8" />, label: "Laundry" },
+  ];
 
   const keyFeatures = [
     {
@@ -35,10 +37,10 @@ export function RetailFeatures() {
       title: "Sync with accounting systems",
       description: "Automate financial reconciliation",
     },
-  ]
+  ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[hsl(var(--background))]">
+    <section className="py-10 px-4 sm:px-6 lg:px-8 bg-[hsl(var(--background))]">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center text-[hsl(var(--foreground))] mb-2">
           All-in-One POS System for Retail
@@ -49,9 +51,12 @@ export function RetailFeatures() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 mb-20">
           {categoryFeatures.map((cat) => (
-            <div key={cat.label} className="flex flex-col items-center text-center group cursor-pointer">
+            <div
+              key={cat.label}
+              className="flex flex-col items-center text-center group cursor-pointer"
+            >
               <div className="mb-4 flex items-center justify-center w-16 h-16 rounded-full bg-[hsl(var(--primary))]/10 border-2 border-[hsl(var(--primary))]/30 group-hover:scale-110 transition-transform duration-300 group-hover:border-[hsl(var(--primary))]">
-                <span className="text-3xl">{cat.icon}</span>
+                {cat.icon}
               </div>
               <p className="text-sm font-medium text-[hsl(var(--foreground))]">{cat.label}</p>
             </div>
@@ -78,5 +83,5 @@ export function RetailFeatures() {
         </div>
       </div>
     </section>
-  )
+  );
 }

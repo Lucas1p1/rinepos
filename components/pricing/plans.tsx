@@ -42,7 +42,7 @@ export function PricingPlans() {
   ]
 
   return (
-    <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-background dark:bg-background">
+    <section className="pt-12 pb-20 px-4 sm:px-6 lg:px-8 bg-background dark:bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-foreground dark:text-foreground mb-6">Simple, Transparent Pricing</h1>

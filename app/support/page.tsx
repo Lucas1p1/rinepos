@@ -34,7 +34,7 @@ export default function Support() {
       <Navigation />
 
       <main>
-        <section className="py-20 md:py-32 bg-[hsl(var(--background))]">
+        <section className="py-20 md:py-12 bg-[hsl(var(--background))]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Header */}
             <div className="text-center mb-16">

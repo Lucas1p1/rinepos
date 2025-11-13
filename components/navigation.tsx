@@ -39,24 +39,17 @@ export function Navigation() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            {[
-              { href: "/", label: "Home" },
-              { href: "/pricing", label: "Pricing" },
-              { href: "/careers", label: "Careers" },
-              { href: "/support", label: "Support" },
-            ].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="relative text-sm font-medium text-[hsl(var(--muted-foreground))] transition-all duration-300 
-                hover:text-[hsl(var(--primary))] hover:drop-shadow-[0_0_6px_hsl(var(--primary))]"
-              >
-                {item.label}
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[hsl(var(--primary))] transition-all duration-300 group-hover:w-full hover:w-full rounded-full"></span>
-              </Link>
-            ))}
+            {/* Home Link */}
+            <Link
+              href="/"
+              className="relative text-sm font-medium text-[hsl(var(--muted-foreground))] transition-all duration-300 
+              hover:text-[hsl(var(--primary))] hover:drop-shadow-[0_0_6px_hsl(var(--primary))]"
+            >
+              Home
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[hsl(var(--primary))] transition-all duration-300 hover:w-full rounded-full"></span>
+            </Link>
 
-            {/* Dropdown */}
+            {/* Products Dropdown */}
             <div className="relative group">
               <button className="text-sm font-medium text-[hsl(var(--muted-foreground))] transition-all duration-300 hover:text-[hsl(var(--primary))] hover:drop-shadow-[0_0_6px_hsl(var(--primary))]">
                 Products
@@ -77,6 +70,23 @@ export function Navigation() {
                 ))}
               </div>
             </div>
+
+            {/* Other Links */}
+            {[
+              { href: "/pricing", label: "Pricing" },
+              { href: "/careers", label: "Careers" },
+              { href: "/support", label: "Support" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="relative text-sm font-medium text-[hsl(var(--muted-foreground))] transition-all duration-300 
+                hover:text-[hsl(var(--primary))] hover:drop-shadow-[0_0_6px_hsl(var(--primary))]"
+              >
+                {item.label}
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[hsl(var(--primary))] transition-all duration-300 hover:w-full rounded-full"></span>
+              </Link>
+            ))}
           </div>
 
           {/* Right Section */}
@@ -110,13 +120,39 @@ export function Navigation() {
         {/* Mobile Menu */}
         {mobileOpen && (
           <div className="md:hidden pb-4 space-y-2 border-t border-[hsl(var(--border))] animate-fadeIn">
+            {/* Home */}
+            <Link
+              href="/"
+              className="block px-4 py-2 text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] hover:bg-[hsl(var(--muted))]/40 transition-all duration-300 rounded-lg hover:shadow-[0_0_8px_hsl(var(--primary))]"
+            >
+              Home
+            </Link>
+
+            {/* Products Dropdown in mobile */}
+            <div className="space-y-1">
+              <span className="block px-4 py-2 text-[hsl(var(--muted-foreground))] font-medium">
+                Products
+              </span>
+              {[
+                { href: "/restaurant-pos", label: "🍽️ Restaurant POS" },
+                { href: "/retail-pos", label: "🛍️ Retail POS" },
+                { href: "/hotel-pos", label: "🏨 Hotel Management" },
+              ].map((p) => (
+                <Link
+                  key={p.href}
+                  href={p.href}
+                  className="block px-6 py-2 text-[hsl(var(--foreground))] hover:text-[hsl(var(--primary))] hover:bg-[hsl(var(--muted))]/40 transition-all duration-300 rounded-lg"
+                >
+                  {p.label}
+                </Link>
+              ))}
+            </div>
+
+            {/* Other Links */}
             {[
-              { href: "/", label: "Home" },
-              { href: "/restaurant-pos", label: "Restaurant POS" },
-              { href: "/retail-pos", label: "Retail POS" },
-              { href: "/hotel-pos", label: "Hotel Management" },
               { href: "/pricing", label: "Pricing" },
               { href: "/careers", label: "Careers" },
+              { href: "/support", label: "Support" },
             ].map((item) => (
               <Link
                 key={item.href}

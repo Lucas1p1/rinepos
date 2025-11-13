@@ -10,6 +10,11 @@ const geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "RinePOS - Modern POS Solutions",
   description: "Cloud-based POS system for restaurants, retail, and hotels. Manage your business with ease.",
+  icons: {
+    icon: "/RinePOS Dark.png",
+    shortcut: "/RinePOS Dark.png",
+    apple: "/RinePOS Dark.png",
+  },
 }
 
 export default function RootLayout({
@@ -22,13 +27,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.className} flex flex-col min-h-screen bg-[hsl(var(--background))] text-[hsl(var(--foreground))]`}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+        {/* Force dark mode by default */}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"   // <-- dark mode first
+          enableSystem={false} // disable system preference override
+        >
           <div className="flex flex-col flex-1">
-            {/* Main page content */}
             <main className="flex-grow">{children}</main>
-
-            {/* Footer stays at bottom */}
-            {/* You can also import Navigation above main if needed */}
           </div>
         </ThemeProvider>
       </body>
