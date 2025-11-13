@@ -3,6 +3,9 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ==============================
+   THEME VARIABLES
+   ============================== */
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -37,6 +40,11 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* colored stars for light mode */
+  --star-color-1: rgba(255, 200, 200, 0.12);
+  --star-color-2: rgba(200, 255, 200, 0.12);
+  --star-color-3: rgba(200, 200, 255, 0.12);
 }
 
 .dark {
@@ -72,8 +80,16 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
+
+  /* colored stars for dark mode */
+  --star-color-1: rgba(180, 220, 255, 0.16);
+  --star-color-2: rgba(200, 240, 255, 0.16);
+  --star-color-3: rgba(150, 200, 255, 0.16);
 }
 
+/* ==============================
+   THEME INLINE VARIABLES
+   ============================== */
 @theme inline {
   --font-sans: 'Geist', 'Geist Fallback';
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
@@ -115,11 +131,42 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* ==============================
+   BASE LAYER WITH STAR ANIMATION
+   ============================== */
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* starry background layer */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-color: var(--background);
+    background-image:
+      radial-gradient(var(--star-color-1) 1px, transparent 1px),
+      radial-gradient(var(--star-color-2) 1px, transparent 1px),
+      radial-gradient(var(--star-color-3) 1px, transparent 1px);
+    background-size: 60px 60px, 80px 80px, 100px 100px;
+    background-position: 0 0, 40px 40px, 20px 60px;
+    animation: starTwinkle 60s linear infinite;
+    transition: background-color 0.3s ease;
+  }
+
+  /* twinkle animation */
+  @keyframes starTwinkle {
+    0% { background-position: 0 0, 40px 40px, 20px 60px; opacity: 0.8; }
+    50% { background-position: 30px 15px, 70px 50px, 40px 80px; opacity: 1; }
+    100% { background-position: 0 0, 40px 40px, 20px 60px; opacity: 0.8; }
   }
 }

@@ -17,83 +17,74 @@ export function Navigation() {
   if (!mounted) return null
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-[hsl(var(--background))] dark:bg-[hsl(var(--background))] border-b border-[hsl(var(--border))] shadow-sm transition-colors">
+    <nav className="sticky top-0 z-50 w-full border-b border-[hsl(var(--border))] shadow-sm bg-[hsl(var(--background))]/95 backdrop-blur-lg transition-all duration-300">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-13 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 shrink-0">
+        <div className="flex h-14 items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2 shrink-0 hover:scale-[1.02] transition-transform duration-300">
             {theme === "dark" ? (
               <img
                 src="/RinePOS Dark.png"
                 alt="RinePOS Dark Logo"
-                className="h-30 w-max"
+                className="h-10 w-auto"
               />
             ) : (
               <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/RinePOS%20copy%406x-eP66qnEjqsUkegLPQ5Sk8Ifq0y1v7m.png"
+                src="/RinePOS Dark.png"
                 alt="RinePOS Light Logo"
-                className="h-30 w-max"
+                className="h-10 w-auto"
               />
             )}
           </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <Link
-              href="/"
-              className="text-sm font-medium text-[hsl(var(--muted-foreground))] dark:text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] dark:hover:text-[hsl(var(--primary))] transition"
-            >
-              Home
-            </Link>
+            {[
+              { href: "/", label: "Home" },
+              { href: "/pricing", label: "Pricing" },
+              { href: "/careers", label: "Careers" },
+              { href: "/support", label: "Support" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="relative text-sm font-medium text-[hsl(var(--muted-foreground))] transition-all duration-300 
+                hover:text-[hsl(var(--primary))] hover:drop-shadow-[0_0_6px_hsl(var(--primary))]"
+              >
+                {item.label}
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[hsl(var(--primary))] transition-all duration-300 group-hover:w-full hover:w-full rounded-full"></span>
+              </Link>
+            ))}
+
+            {/* Dropdown */}
             <div className="relative group">
-              <button className="text-sm font-medium text-[hsl(var(--muted-foreground))] dark:text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] dark:hover:text-[hsl(var(--primary))] transition">
+              <button className="text-sm font-medium text-[hsl(var(--muted-foreground))] transition-all duration-300 hover:text-[hsl(var(--primary))] hover:drop-shadow-[0_0_6px_hsl(var(--primary))]">
                 Products
               </button>
-              <div className="absolute left-0 mt-2 w-48 bg-[hsl(var(--card))] dark:bg-[hsl(var(--card))] border border-[hsl(var(--border))] rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all py-2">
-                <Link
-                  href="/restaurant-pos"
-                  className="block px-4 py-2 text-sm text-[hsl(var(--foreground))] dark:text-[hsl(var(--foreground))] hover:bg-[hsl(var(--primary))]/10 dark:hover:bg-[hsl(var(--primary))]/20 transition"
-                >
-                  Restaurant POS
-                </Link>
-                <Link
-                  href="/retail-pos"
-                  className="block px-4 py-2 text-sm text-[hsl(var(--foreground))] dark:text-[hsl(var(--foreground))] hover:bg-[hsl(var(--primary))]/10 dark:hover:bg-[hsl(var(--primary))]/20 transition"
-                >
-                  Retail POS
-                </Link>
-                <Link
-                  href="/hotel-pos"
-                  className="block px-4 py-2 text-sm text-[hsl(var(--foreground))] dark:text-[hsl(var(--foreground))] hover:bg-[hsl(var(--primary))]/10 dark:hover:bg-[hsl(var(--primary))]/20 transition"
-                >
-                  Hotel Management
-                </Link>
+              <div className="absolute left-0 mt-2 w-52 bg-[hsl(var(--card))] border border-[hsl(var(--border))] rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2 backdrop-blur-md">
+                {[
+                  { href: "/restaurant-pos", label: "🍽️ Restaurant POS" },
+                  { href: "/retail-pos", label: "🛍️ Retail POS" },
+                  { href: "/hotel-pos", label: "🏨 Hotel Management" },
+                ].map((p) => (
+                  <Link
+                    key={p.href}
+                    href={p.href}
+                    className="block px-4 py-2 text-sm text-[hsl(var(--foreground))] hover:bg-[hsl(var(--primary))]/15 hover:translate-x-1 transition-all duration-300 rounded-md"
+                  >
+                    {p.label}
+                  </Link>
+                ))}
               </div>
             </div>
-            <Link
-              href="/pricing"
-              className="text-sm font-medium text-[hsl(var(--muted-foreground))] dark:text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] dark:hover:text-[hsl(var(--primary))] transition"
-            >
-              Pricing
-            </Link>
-            <Link
-              href="/careers"
-              className="text-sm font-medium text-[hsl(var(--muted-foreground))] dark:text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] dark:hover:text-[hsl(var(--primary))] transition"
-            >
-              Careers
-            </Link>
-            <Link
-              href="/support"
-              className="text-sm font-medium text-[hsl(var(--muted-foreground))] dark:text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] dark:hover:text-[hsl(var(--primary))] transition"
-            >
-              Support
-            </Link>
           </div>
 
           {/* Right Section */}
           <div className="flex items-center gap-4">
+            {/* Theme Toggle */}
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="p-2 rounded-lg hover:bg-[hsl(var(--muted))] dark:hover:bg-[hsl(var(--muted))] transition"
+              className="p-2 rounded-lg hover:scale-110 transition-all duration-300 hover:shadow-[0_0_10px_hsl(var(--primary))]"
             >
               {theme === "dark" ? (
                 <Sun className="w-5 h-5 text-[hsl(var(--muted-foreground))]" />
@@ -103,7 +94,10 @@ export function Navigation() {
             </button>
 
             {/* Mobile Menu Button */}
-            <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden p-2">
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="md:hidden p-2 rounded-lg hover:scale-110 transition-transform duration-300"
+            >
               {mobileOpen ? (
                 <X className="w-6 h-6 text-[hsl(var(--muted-foreground))]" />
               ) : (
@@ -115,43 +109,23 @@ export function Navigation() {
 
         {/* Mobile Menu */}
         {mobileOpen && (
-          <div className="md:hidden pb-4 space-y-2 border-t border-[hsl(var(--border))]">
-            <Link
-              href="/"
-              className="block px-4 py-2 text-[hsl(var(--muted-foreground))] dark:text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] hover:bg-[hsl(var(--muted))] dark:hover:bg-[hsl(var(--muted))] transition"
-            >
-              Home
-            </Link>
-            <Link
-              href="/restaurant-pos"
-              className="block px-4 py-2 text-[hsl(var(--muted-foreground))] dark:text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] hover:bg-[hsl(var(--muted))] dark:hover:bg-[hsl(var(--muted))] transition"
-            >
-              Restaurant POS
-            </Link>
-            <Link
-              href="/retail-pos"
-              className="block px-4 py-2 text-[hsl(var(--muted-foreground))] dark:text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] hover:bg-[hsl(var(--muted))] dark:hover:bg-[hsl(var(--muted))] transition"
-            >
-              Retail POS
-            </Link>
-            <Link
-              href="/hotel-pos"
-              className="block px-4 py-2 text-[hsl(var(--muted-foreground))] dark:text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] hover:bg-[hsl(var(--muted))] dark:hover:bg-[hsl(var(--muted))] transition"
-            >
-              Hotel Management
-            </Link>
-            <Link
-              href="/pricing"
-              className="block px-4 py-2 text-[hsl(var(--muted-foreground))] dark:text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] hover:bg-[hsl(var(--muted))] dark:hover:bg-[hsl(var(--muted))] transition"
-            >
-              Pricing
-            </Link>
-            <Link
-              href="/careers"
-              className="block px-4 py-2 text-[hsl(var(--muted-foreground))] dark:text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] hover:bg-[hsl(var(--muted))] dark:hover:bg-[hsl(var(--muted))] transition"
-            >
-              Careers
-            </Link>
+          <div className="md:hidden pb-4 space-y-2 border-t border-[hsl(var(--border))] animate-fadeIn">
+            {[
+              { href: "/", label: "Home" },
+              { href: "/restaurant-pos", label: "Restaurant POS" },
+              { href: "/retail-pos", label: "Retail POS" },
+              { href: "/hotel-pos", label: "Hotel Management" },
+              { href: "/pricing", label: "Pricing" },
+              { href: "/careers", label: "Careers" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block px-4 py-2 text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] hover:bg-[hsl(var(--muted))]/40 transition-all duration-300 rounded-lg hover:shadow-[0_0_8px_hsl(var(--primary))]"
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
         )}
       </div>
