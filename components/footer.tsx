@@ -14,38 +14,34 @@ export function Footer() {
   }, [])
 
   return (
-    <footer className="bg-[hsl(var(--card))] text-[hsl(var(--foreground))] py-5 px-4 sm:px-6 lg:px-8 dark:bg-[hsl(var(--card))] dark:text-[hsl(var(--foreground))]">
+    <footer className="bg-[hsl(var(--card))] text-[hsl(var(--foreground))] py-4 px-4 sm:px-6 lg:px-8 dark:bg-[hsl(var(--card))] dark:text-[hsl(var(--foreground))] mt-auto">
       <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-9 mb-1">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-2">
           {/* Logo + description */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-2 mb-0">
               <Link href="/" className="flex items-center gap-2">
                 {mounted && theme === "dark" ? (
                   <img
                     src="/RinePOS Dark.png"
                     alt="RinePOS Dark Logo"
-                    className="h-10 w-30"
+                    className="h- w-auto"
                   />
                 ) : (
                   <img
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/RinePOS%20copy%406x-eP66qnEjqsUkegLPQ5Sk8Ifq0y1v7m.png"
                     alt="RinePOS Light Logo"
-                    className="h-10 w-30"
+                    className="h- w-auto"
                   />
                 )}
               </Link>
-              <span className="font-bold text-lg">RinePOS</span>
             </div>
-            <p className="text-[hsl(var(--muted-foreground))]">
-              Modern POS solutions for restaurants, retail, and hotels worldwide.
-            </p>
           </div>
 
           {/* Products */}
           <div>
-            <h3 className="font-semibold mb-4">Products</h3>
-            <ul className="space-y-2 text-[hsl(var(--muted-foreground))]">
+            <h3 className="font-semibold mb-2">Products</h3>
+            <ul className="space-y-1 text-[hsl(var(--muted-foreground))]">
               <li>
                 <Link href="/restaurant-pos" className="hover:text-[hsl(var(--primary))] transition">
                   Restaurant POS
@@ -66,8 +62,8 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="font-semibold mb-4">Company</h3>
-            <ul className="space-y-2 text-[hsl(var(--muted-foreground))]">
+            <h3 className="font-semibold mb-2">Company</h3>
+            <ul className="space-y-1 text-[hsl(var(--muted-foreground))]">
               <li>
                 <Link href="#" className="hover:text-[hsl(var(--primary))] transition">
                   About Us
@@ -88,8 +84,8 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="font-semibold mb-4">Legal</h3>
-            <ul className="space-y-2 text-[hsl(var(--muted-foreground))]">
+            <h3 className="font-semibold mb-2">Legal</h3>
+            <ul className="space-y-1 text-[hsl(var(--muted-foreground))]">
               <li>
                 <Link href="#" className="hover:text-[hsl(var(--primary))] transition">
                   Privacy Policy
@@ -110,7 +106,7 @@ export function Footer() {
         </div>
 
         {/* Bottom line */}
-        <div className="border-t border-[hsl(var(--border))] pt-3 text-center text-[hsl(var(--muted-foreground))]">
+        <div className="border-t border-[hsl(var(--border))] pt-2 text-center text-[hsl(var(--muted-foreground))] text-sm">
           <p>&copy; 2025 RinePOS. All rights reserved.</p>
         </div>
       </div>

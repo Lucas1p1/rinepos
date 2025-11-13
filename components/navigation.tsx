@@ -19,19 +19,19 @@ export function Navigation() {
   return (
     <nav className="sticky top-0 z-50 w-full bg-[hsl(var(--background))] dark:bg-[hsl(var(--background))] border-b border-[hsl(var(--border))] shadow-sm transition-colors">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-13 items-center justify-between">
           <Link href="/" className="flex items-center gap-2 shrink-0">
             {theme === "dark" ? (
               <img
                 src="/RinePOS Dark.png"
                 alt="RinePOS Dark Logo"
-                className="h-50 w-50"
+                className="h-30 w-max"
               />
             ) : (
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/RinePOS%20copy%406x-eP66qnEjqsUkegLPQ5Sk8Ifq0y1v7m.png"
                 alt="RinePOS Light Logo"
-                className="h-50 w-50"
+                className="h-30 w-max"
               />
             )}
           </Link>
