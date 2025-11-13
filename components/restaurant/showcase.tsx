@@ -2,10 +2,9 @@ import { Badge } from "@/components/ui/badge"
 
 export function RestaurantShowcase() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+    <section className="py-10 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-primary/10 text-primary hover:bg-primary/20">Features Showcase</Badge>
           <h2 className="text-4xl font-bold text-foreground mb-4">See It in Action</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Experience how our restaurant POS system transforms your dining operations with real-time kitchen management

@@ -23,7 +23,7 @@ export function Resources() {
   ]
 
   return (
-    <section className="py-24 bg-[hsl(var(--secondary))]">
+    <section className="py-12 bg-[hsl(var(--secondary))]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Learn From Industry Experts</h2>

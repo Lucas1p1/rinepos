@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--background))] to-[hsl(var(--secondary))]">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-1 md:py-1">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-block mb-4 px-4 py-2 bg-[hsl(var(--primary))]/10 rounded-full">

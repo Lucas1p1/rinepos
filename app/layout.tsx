@@ -19,9 +19,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.className} bg-[hsl(var(--background))] text-[hsl(var(--foreground))]`}>
+      <body
+        className={`${geistSans.className} flex flex-col min-h-screen bg-[hsl(var(--background))] text-[hsl(var(--foreground))]`}
+      >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          {children}
+          <div className="flex flex-col flex-1">
+            {/* Main page content */}
+            <main className="flex-grow">{children}</main>
+
+            {/* Footer stays at bottom */}
+            {/* You can also import Navigation above main if needed */}
+          </div>
         </ThemeProvider>
       </body>
     </html>

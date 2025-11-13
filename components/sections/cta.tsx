@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 
 export function CTA() {
   return (
-    <section className="py-24 bg-gradient-to-r from-[hsl(var(--primary))]/10 to-[hsl(var(--primary))]/5 border-t border-[hsl(var(--border))]">
+    <section className="py-12 bg-gradient-to-r from-[hsl(var(--primary))]/10 to-[hsl(var(--primary))]/5 border-t border-[hsl(var(--border))]">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Transform Your Business?</h2>
         <p className="text-xl text-[hsl(var(--muted-foreground))] mb-8 leading-relaxed">

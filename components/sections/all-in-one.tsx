@@ -29,7 +29,7 @@ export function AllInOne() {
   ]
 
   return (
-    <section className="py-24 bg-[hsl(var(--background))]">
+    <section className="py-12 bg-[hsl(var(--background))]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">All-in-One Business Software</h2>
