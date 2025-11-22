@@ -30,7 +30,7 @@ export function Navigation() {
               />
             ) : (
               <img
-                src="/RinePOS Dark.png"
+                src="/RinePOS Light.png"
                 alt="RinePOS Light Logo"
                 className="h-10 w-auto"
               />

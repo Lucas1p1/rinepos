@@ -9,11 +9,10 @@ const geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "RinePOS - Modern POS Solutions",
-  description: "Cloud-based POS system for restaurants, retail, and hotels. Manage your business with ease.",
+  description:
+    "Cloud-based POS system for restaurants, retail, and hotels. Manage your business with ease.",
   icons: {
-    icon: "/RinePOS Dark.png",
-    shortcut: "/RinePOS Dark.png",
-    apple: "/RinePOS Dark.png",
+    icon: "/RinePOS L.png", // Default icon now LIGHT mode
   },
 }
 
@@ -24,18 +23,37 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Dynamic favicon changer */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              function updateFavicon() {
+                const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+                const icon = document.querySelector("link[rel='icon']");
+                if (icon) {
+                  icon.href = theme === 'dark' ? '/RinePOS D.png' : '/RinePOS L.png';
+                }
+              }
+              // Listen for theme changes
+              const observer = new MutationObserver(updateFavicon);
+              observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+              // Run on first load
+              updateFavicon();
+            `,
+          }}
+        />
+      </head>
+
       <body
         className={`${geistSans.className} flex flex-col min-h-screen bg-[hsl(var(--background))] text-[hsl(var(--foreground))]`}
       >
-        {/* Force dark mode by default */}
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"   // <-- dark mode first
-          enableSystem={false} // disable system preference override
+          defaultTheme="light"  // <-- LIGHT mode is now default
+          enableSystem={false}
         >
-          <div className="flex flex-col flex-1">
-            <main className="flex-grow">{children}</main>
-          </div>
+          <main className="flex-grow">{children}</main>
         </ThemeProvider>
       </body>
     </html>
