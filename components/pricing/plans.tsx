@@ -1,7 +1,7 @@
 export function PricingPlans() {
   const plans = [
     {
-      name: "Starter",
+      name: "Beginner",
       price: "$99",
       period: "/month",
       description: "Perfect for small businesses",
