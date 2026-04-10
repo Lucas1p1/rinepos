@@ -1,8 +1,5 @@
 import Link from "next/link"
-<<<<<<< HEAD
 import { ArrowRight } from "lucide-react"
-=======
->>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
 
 export function Resources() {
   const resources = [
@@ -27,7 +24,6 @@ export function Resources() {
   ]
 
   return (
-<<<<<<< HEAD
     <section className="py-16 bg-[hsl(var(--secondary))]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
@@ -35,20 +31,10 @@ export function Resources() {
           <p className="text-lg text-[hsl(var(--muted-foreground))]">Access resources, guides, and best practices</p>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
-=======
-    <section className="py-12 bg-[hsl(var(--secondary))]">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Learn From Industry Experts</h2>
-          <p className="text-lg text-[hsl(var(--muted-foreground))]">Access resources, guides, and best practices</p>
-        </div>
-        <div className="grid md:grid-cols-3 gap-8">
->>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
           {resources.map((resource, idx) => (
             <Link
               key={idx}
               href={resource.link}
-<<<<<<< HEAD
               className="bg-[hsl(var(--card))] p-7 rounded-xl border border-[hsl(var(--border))] hover:border-[hsl(var(--primary))] hover:shadow-lg transition-all group"
             >
               <div className="inline-block px-2.5 py-1 bg-[hsl(var(--primary))]/10 rounded-md mb-4">
@@ -60,19 +46,6 @@ export function Resources() {
               <p className="text-[hsl(var(--muted-foreground))] mb-5 text-sm leading-relaxed">{resource.description}</p>
               <span className="text-[hsl(var(--primary))] font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                 Read More <ArrowRight className="w-3.5 h-3.5" />
-=======
-              className="bg-[hsl(var(--card))] p-8 rounded-xl border border-[hsl(var(--border))] hover:border-[hsl(var(--primary))] hover:shadow-lg transition-all group"
-            >
-              <div className="inline-block px-3 py-1 bg-[hsl(var(--primary))]/10 rounded-full mb-4">
-                <span className="text-[hsl(var(--primary))] text-xs font-semibold">{resource.category}</span>
-              </div>
-              <h3 className="text-xl font-bold mb-3 group-hover:text-[hsl(var(--primary))] transition-colors">
-                {resource.title}
-              </h3>
-              <p className="text-[hsl(var(--muted-foreground))] mb-4">{resource.description}</p>
-              <span className="text-[hsl(var(--primary))] font-semibold group-hover:translate-x-1 transition-transform inline-block">
-                Read More →
->>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
               </span>
             </Link>
           ))}
@@ -80,8 +53,4 @@ export function Resources() {
       </div>
     </section>
   )
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367

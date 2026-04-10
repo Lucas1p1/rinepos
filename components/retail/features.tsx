@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import {
   ShoppingCart,
   Shirt,
@@ -21,21 +20,6 @@ export function RetailFeatures() {
     { icon: BookOpen, label: "Book Shop" },
     { icon: Layers, label: "Laundry" },
   ]
-=======
-import { ShoppingCart, Shirt, Laptop, Gift, Wrench, LifeBuoy, Book, Cloud } from "lucide-react";
-
-export function RetailFeatures() {
-  const categoryFeatures = [
-    { icon: <ShoppingCart className="w-8 h-8" />, label: "Supermarket" },
-    { icon: <Shirt className="w-8 h-8" />, label: "Clothing Store" },
-    { icon: <Laptop className="w-8 h-8" />, label: "Electronic Store" },
-    { icon: <Gift className="w-8 h-8" />, label: "Gift & Toy" },
-    { icon: <Wrench className="w-8 h-8" />, label: "Hardware Store" },
-    { icon: <LifeBuoy className="w-8 h-8" />, label: "Beauty Salon" },
-    { icon: <Book className="w-8 h-8" />, label: "Book Shop" },
-    { icon: <Cloud className="w-8 h-8" />, label: "Laundry" },
-  ];
->>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
 
   const keyFeatures = [
     {
@@ -62,22 +46,14 @@ export function RetailFeatures() {
       title: "Sync with accounting systems",
       description: "Automate financial reconciliation",
     },
-<<<<<<< HEAD
   ]
 
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[hsl(var(--background))]">
-=======
-  ];
-
-  return (
-    <section className="py-10 px-4 sm:px-6 lg:px-8 bg-[hsl(var(--background))]">
->>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center text-[hsl(var(--foreground))] mb-2">
           All-in-One POS System for Retail
         </h2>
-<<<<<<< HEAD
         <div className="flex justify-center mb-14">
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[hsl(var(--primary))] to-transparent"></div>
         </div>
@@ -112,39 +88,6 @@ export function RetailFeatures() {
                 <div>
                   <p className="text-[hsl(var(--foreground))] font-medium text-sm">{feature.title}</p>
                   <p className="text-[hsl(var(--muted-foreground))] text-sm mt-0.5">{feature.description}</p>
-=======
-        <div className="flex justify-center mb-16">
-          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[hsl(var(--primary))] to-transparent"></div>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 mb-20">
-          {categoryFeatures.map((cat) => (
-            <div
-              key={cat.label}
-              className="flex flex-col items-center text-center group cursor-pointer"
-            >
-              <div className="mb-4 flex items-center justify-center w-16 h-16 rounded-full bg-[hsl(var(--primary))]/10 border-2 border-[hsl(var(--primary))]/30 group-hover:scale-110 transition-transform duration-300 group-hover:border-[hsl(var(--primary))]">
-                {cat.icon}
-              </div>
-              <p className="text-sm font-medium text-[hsl(var(--foreground))]">{cat.label}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="bg-[hsl(var(--secondary))] rounded-2xl p-12">
-          <h3 className="text-2xl font-bold text-[hsl(var(--foreground))] mb-8 text-center">
-            Leading POS System For Retail
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {keyFeatures.map((feature) => (
-              <div key={feature.title} className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[hsl(var(--primary))] flex items-center justify-center mt-1">
-                  <span className="text-[hsl(var(--primary-foreground))] text-sm font-bold">✓</span>
-                </div>
-                <div>
-                  <p className="text-[hsl(var(--foreground))] font-medium">{feature.title}</p>
-                  <p className="text-[hsl(var(--muted-foreground))] text-sm">{feature.description}</p>
->>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
                 </div>
               </div>
             ))}
@@ -152,10 +95,5 @@ export function RetailFeatures() {
         </div>
       </div>
     </section>
-<<<<<<< HEAD
   )
 }
-=======
-  );
-}
->>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367

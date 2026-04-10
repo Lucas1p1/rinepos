@@ -1,18 +1,11 @@
 import { Button } from "@/components/ui/button"
-<<<<<<< HEAD
 import { Package, Star, BookOpen } from "lucide-react"
-=======
->>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
 
 export function HotelFeatures() {
   const features = [
     {
       title: "Hotel Inventory Management",
-<<<<<<< HEAD
       icon: Package,
-=======
-      icon: "🧴",
->>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
       bullets: [
         "Track Purchases",
         "Expiry Date Management",
@@ -24,11 +17,7 @@ export function HotelFeatures() {
     },
     {
       title: "Hotel Loyalty Program",
-<<<<<<< HEAD
       icon: Star,
-=======
-      icon: "⭐",
->>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
       bullets: [
         "Turn visitors into Clients",
         "Centrally Managed Customer Profiles",
@@ -40,11 +29,7 @@ export function HotelFeatures() {
     },
     {
       title: "Accounting System",
-<<<<<<< HEAD
       icon: BookOpen,
-=======
-      icon: "💼",
->>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
       bullets: [
         "Accounting Transactions in One Place",
         "Cloud-based Accounting System",
@@ -57,16 +42,11 @@ export function HotelFeatures() {
   ]
 
   return (
-<<<<<<< HEAD
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[hsl(var(--background))]">
-=======
-    <section className="py-10 px-4 sm:px-6 lg:px-8 bg-[hsl(var(--background))]">
->>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center text-[hsl(var(--foreground))] mb-2">
           A Complete Hotel Management System
         </h2>
-<<<<<<< HEAD
         <div className="flex justify-center mb-14">
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[hsl(var(--primary))] to-transparent"></div>
         </div>
@@ -104,48 +84,8 @@ export function HotelFeatures() {
               </div>
             )
           })}
-=======
-        <div className="flex justify-center mb-16">
-          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[hsl(var(--primary))] to-transparent"></div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {features.map((feature) => (
-            <div
-              key={feature.title}
-              className="bg-[hsl(var(--card))] rounded-xl border border-[hsl(var(--border))] overflow-hidden hover:border-[hsl(var(--primary))] hover:shadow-lg transition-all"
-            >
-              <div className="bg-[hsl(var(--primary))]/10 p-6 text-center">
-                <div className="flex items-center justify-center w-20 h-20 rounded-full bg-[hsl(var(--primary))]/10 border-2 border-[hsl(var(--primary))]/30 mx-auto mb-4">
-                  <span className="text-4xl">{feature.icon}</span>
-                </div>
-                <h3 className="text-xl font-bold text-[hsl(var(--foreground))]">{feature.title}</h3>
-              </div>
-              <div className="p-6">
-                <ul className="space-y-3 mb-6">
-                  {feature.bullets.map((bullet, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <span className="text-[hsl(var(--primary))] font-bold mt-0.5">✓</span>
-                      <span className="text-[hsl(var(--foreground))] text-sm">{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button
-                  variant="outline"
-                  className="w-full border-[hsl(var(--primary))] text-[hsl(var(--primary))] hover:bg-[hsl(var(--primary))]/5 bg-transparent"
-                >
-                  {feature.cta}
-                </Button>
-              </div>
-            </div>
-          ))}
->>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
         </div>
       </div>
     </section>
   )
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367

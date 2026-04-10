@@ -3,10 +3,6 @@ import { Hero } from "@/components/sections/hero"
 import { AllInOne } from "@/components/sections/all-in-one"
 import { WhyTrust } from "@/components/sections/why-trust"
 import { Features } from "@/components/sections/features"
-<<<<<<< HEAD
-=======
-import { Stats } from "@/components/sections/stats"
->>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
 import { Resources } from "@/components/sections/resources"
 import { CTA } from "@/components/sections/cta"
 import { Footer } from "@/components/footer"
@@ -24,17 +20,9 @@ export default function Home() {
       <AllInOne />
       <Features />
       <WhyTrust />
-<<<<<<< HEAD
-=======
-      <Stats />
->>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
       <Resources />
       <CTA />
       <Footer />
     </>
   )
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
