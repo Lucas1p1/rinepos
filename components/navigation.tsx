@@ -3,7 +3,11 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { useTheme } from "next-themes"
+<<<<<<< HEAD
 import { Menu, X, Sun, Moon, UtensilsCrossed, ShoppingBag, Building2 } from "lucide-react"
+=======
+import { Menu, X, Sun, Moon } from "lucide-react"
+>>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
 
 export function Navigation() {
   const [mounted, setMounted] = useState(false)
@@ -16,12 +20,15 @@ export function Navigation() {
 
   if (!mounted) return null
 
+<<<<<<< HEAD
   const productLinks = [
     { href: "/restaurant-pos", label: "Restaurant POS", icon: UtensilsCrossed },
     { href: "/retail-pos", label: "Retail POS", icon: ShoppingBag },
     { href: "/hotel-pos", label: "Hotel Management", icon: Building2 },
   ]
 
+=======
+>>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-[hsl(var(--border))] shadow-sm bg-[hsl(var(--background))]/95 backdrop-blur-lg transition-all duration-300">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -29,14 +36,32 @@ export function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0 hover:scale-[1.02] transition-transform duration-300">
             {theme === "dark" ? (
+<<<<<<< HEAD
               <img src="/RinePOS Dark.png" alt="RinePOS Dark Logo" className="h-10 w-auto" />
             ) : (
               <img src="/RinePOS Light.png" alt="RinePOS Light Logo" className="h-10 w-auto" />
+=======
+              <img
+                src="/RinePOS Dark.png"
+                alt="RinePOS Dark Logo"
+                className="h-10 w-auto"
+              />
+            ) : (
+              <img
+                src="/RinePOS Light.png"
+                alt="RinePOS Light Logo"
+                className="h-10 w-auto"
+              />
+>>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
             )}
           </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
+<<<<<<< HEAD
+=======
+            {/* Home Link */}
+>>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
             <Link
               href="/"
               className="relative text-sm font-medium text-[hsl(var(--muted-foreground))] transition-all duration-300 
@@ -52,6 +77,7 @@ export function Navigation() {
                 Products
               </button>
               <div className="absolute left-0 mt-2 w-52 bg-[hsl(var(--card))] border border-[hsl(var(--border))] rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2 backdrop-blur-md">
+<<<<<<< HEAD
                 {productLinks.map((p) => {
                   const Icon = p.icon
                   return (
@@ -65,6 +91,21 @@ export function Navigation() {
                     </Link>
                   )
                 })}
+=======
+                {[
+                  { href: "/restaurant-pos", label: "🍽️ Restaurant POS" },
+                  { href: "/retail-pos", label: "🛍️ Retail POS" },
+                  { href: "/hotel-pos", label: "🏨 Hotel Management" },
+                ].map((p) => (
+                  <Link
+                    key={p.href}
+                    href={p.href}
+                    className="block px-4 py-2 text-sm text-[hsl(var(--foreground))] hover:bg-[hsl(var(--primary))]/15 hover:translate-x-1 transition-all duration-300 rounded-md"
+                  >
+                    {p.label}
+                  </Link>
+                ))}
+>>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
               </div>
             </div>
 
@@ -116,14 +157,23 @@ export function Navigation() {
 
         {/* Mobile Menu */}
         {mobileOpen && (
+<<<<<<< HEAD
           <div className="md:hidden pb-4 space-y-1 border-t border-[hsl(var(--border))] animate-fadeIn pt-2">
             <Link
               href="/"
               className="block px-4 py-2 text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] hover:bg-[hsl(var(--muted))]/40 transition-all duration-300 rounded-lg"
+=======
+          <div className="md:hidden pb-4 space-y-2 border-t border-[hsl(var(--border))] animate-fadeIn">
+            {/* Home */}
+            <Link
+              href="/"
+              className="block px-4 py-2 text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] hover:bg-[hsl(var(--muted))]/40 transition-all duration-300 rounded-lg hover:shadow-[0_0_8px_hsl(var(--primary))]"
+>>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
             >
               Home
             </Link>
 
+<<<<<<< HEAD
             <div className="space-y-0.5">
               <span className="block px-4 py-2 text-[hsl(var(--muted-foreground))] font-medium text-sm">
                 Products
@@ -143,6 +193,29 @@ export function Navigation() {
               })}
             </div>
 
+=======
+            {/* Products Dropdown in mobile */}
+            <div className="space-y-1">
+              <span className="block px-4 py-2 text-[hsl(var(--muted-foreground))] font-medium">
+                Products
+              </span>
+              {[
+                { href: "/restaurant-pos", label: "🍽️ Restaurant POS" },
+                { href: "/retail-pos", label: "🛍️ Retail POS" },
+                { href: "/hotel-pos", label: "🏨 Hotel Management" },
+              ].map((p) => (
+                <Link
+                  key={p.href}
+                  href={p.href}
+                  className="block px-6 py-2 text-[hsl(var(--foreground))] hover:text-[hsl(var(--primary))] hover:bg-[hsl(var(--muted))]/40 transition-all duration-300 rounded-lg"
+                >
+                  {p.label}
+                </Link>
+              ))}
+            </div>
+
+            {/* Other Links */}
+>>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
             {[
               { href: "/pricing", label: "Pricing" },
               { href: "/careers", label: "Careers" },
@@ -151,7 +224,11 @@ export function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
+<<<<<<< HEAD
                 className="block px-4 py-2 text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] hover:bg-[hsl(var(--muted))]/40 transition-all duration-300 rounded-lg"
+=======
+                className="block px-4 py-2 text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] hover:bg-[hsl(var(--muted))]/40 transition-all duration-300 rounded-lg hover:shadow-[0_0_8px_hsl(var(--primary))]"
+>>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
               >
                 {item.label}
               </Link>
@@ -161,4 +238,8 @@ export function Navigation() {
       </div>
     </nav>
   )
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d2463edfe2465a8a7a0462b9bb22f90ffdff1367
